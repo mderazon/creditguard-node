@@ -1,7 +1,7 @@
 {
   "name": "creditguard",
   "version": "0.0.1",
-  "description": "Creditguard API wrapper",
+  "description": "Simple wrapper for Creditguard API",
   "homepage": "https://github.com/mderazon/creditguard-node",
   "author": {
       "name": "Michael Derazon",

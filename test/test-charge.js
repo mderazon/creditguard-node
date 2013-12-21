@@ -14,7 +14,7 @@ var env_mock = {
 var env_testing = {
   user: process.env.CG_USER,
   password: process.env.CG_PASS,
-  server: 'cguat2.creditguard.co.il',
+  server: 'https://cguat2.creditguard.co.il',
   terminal: process.env.CG_TERMINAL,
   mid: process.env.CG_MID,
 };
@@ -23,7 +23,7 @@ var env_testing = {
 var tests = module.exports = {};
 
 tests.bad_env = function(test) {
-  var cg = creditguard(env_testing, { verbose: true });
+  var cg = creditguard(env_testing, { verbose: false });
   cg.call({}, function(err, res) {
     test.done();
   });

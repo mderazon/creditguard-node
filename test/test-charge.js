@@ -1,3 +1,4 @@
+var assert = require('assert');
 var creditguard = require('../lib/creditguard');
 var mock_server = require('./lib/mock-server');
 
@@ -19,12 +20,11 @@ var env_testing = {
   mid: process.env.CG_MID,
 };
 
-
-var tests = module.exports = {};
-
-tests.bad_env = function(test) {
-  var cg = creditguard(env_testing, { verbose: false });
-  cg.call({}, function(err, res) {
-    test.done();
+suite('charge', function() {
+  test('call method without params should fail', function(done) {
+    var cg = creditguard(env_testing, { verbose: false });
+    cg.call({}, function(err, res) {
+      done();
+    });
   });
-};
+});

@@ -24,10 +24,10 @@
     "xml2js": "0.4.0"
   },
   "devDependencies": {
-    "nodeunit": "0.8.2",
+    "mocha": "1.16.1",
     "express": "3.4.7"
   },
   "scripts": {
-    "test": "./node_modules/nodeunit/bin/nodeunit test/test-*.js"
+    "test": "./node_modules/mocha/bin/mocha mocha -u tdd -t 5000 test/test-*.js"
   }
 }

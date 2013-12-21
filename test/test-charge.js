@@ -12,22 +12,19 @@ var env_mock = {
 };
 
 var env_testing = {
-  user: 'urbancaps',
-  password: 'Urb@n0c!pSm',
-  server: 'https://cguat2.creditguard.co.il',
-  terminal: '0962832',
-  mid: '523',
+  user: process.env.CG_USER,
+  password: process.env.CG_PASS,
+  server: 'cguat2.creditguard.co.il',
+  terminal: process.env.CG_TERMINAL,
+  mid: process.env.CG_MID,
 };
-
 
 
 var tests = module.exports = {};
 
 tests.bad_env = function(test) {
-  var cg = creditguard(env_mock, { verbose: true });
+  var cg = creditguard(env_testing, { verbose: true });
   cg.call({}, function(err, res) {
-    console.log(err);
-    console.error(res);
     test.done();
   });
 };

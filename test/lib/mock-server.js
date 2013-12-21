@@ -26,9 +26,7 @@ exports.get_server = function() {
   app.use(express.bodyParser());
 
   app.post('/xpo/Relay', function(req, res) {
-    var body = req.body;
-    body.user
-    console.log(req.body);
+    // TODO need to emulate cg server
   });
 
   // start the mock cg server on port 6000

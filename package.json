@@ -2,7 +2,7 @@
   "name": "creditguard",
   "version": "0.0.1",
   "description": "Creditguard API wrapper",
-  "homepage": "https://github.com/urbancups/creditguard-node",
+  "homepage": "https://github.com/mderazon/creditguard-node",
   "author": {
       "name": "Michael Derazon",
       "email": "mderazon@hotmail.com",
@@ -10,9 +10,9 @@
     },
   "repository": {
     "type": "git",
-    "url": "git://github.com/urbancups/creditguard-node.git"
+    "url": "git://github.com/mderazon/creditguard-node.git"
   },
-  "bugs:": "https://github.com/urbancups/creditguard-node/issues",
+  "bugs:": "https://github.com/mderazon/creditguard-node/issues",
   "engines": {
     "node": ">= 0.6.8"
   },

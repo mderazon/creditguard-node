@@ -20,7 +20,7 @@ var env = {
   terminal: '1234567',
   mid: '531',
   // optional callback addresses when using cg redirect api
-  // when leaving empty, cg will use the predefined terminal value
+  // when left empty, cg will use the predefined terminal value
   success_url: 'localhost/payment/proceed?',
   error_url: 'localhost/payment/rejected?',
   cancel_url: 'localhost/payment/rejected?'

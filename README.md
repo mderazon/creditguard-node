@@ -119,6 +119,9 @@ charge.invoice = {
 ### Response
 `creditguard-node` takes cg `xml` response and converts it to a `javascript` object so there's no need for you to parse any xml. It also verify that the transaction result code is `000` (OK) and if not, throws an informative error that you can catch.
 
+## Changelog
+- v0.0.2 - added xml header for ISO-8859-8 encoding
+
 ## TODO
 - Add mock test server that emulates cg server to remove dependency in cg real servers.
 - Add more tests.

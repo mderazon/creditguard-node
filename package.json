@@ -1,6 +1,6 @@
 {
   "name": "creditguard",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple wrapper for Creditguard API",
   "homepage": "https://github.com/mderazon/creditguard-node",
   "author": {
@@ -19,15 +19,15 @@
   "main": "./lib/creditguard",
 
   "dependencies": {
-    "request": "2.9.202",
+    "request": "2.34.0",
     "jsontoxml": "0.0.11",
-    "xml2js": "0.4.0"
+    "xml2js": "0.4.2"
   },
   "devDependencies": {
-    "mocha": "1.16.1",
-    "express": "3.4.7"
+    "mocha": "*",
+    "chai": "*"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha mocha -u tdd -t 5000 test/test-*.js"
+    "test": "./node_modules/mocha/bin/mocha -u tdd -t 5000 test/test-*.js"
   }
 }

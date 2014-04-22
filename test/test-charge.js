@@ -1,30 +1,50 @@
-var assert = require('assert');
+var assert = require('chai').assert;
 var creditguard = require('../lib/creditguard');
-var mock_server = require('./lib/mock-server');
 
-var server = mock_server.get_server();
-
-var env_mock = {
-  user: mock_server.username,
-  password: mock_server.password,
-  server: mock_server.address,
-  terminal: mock_server.terminal,
-  mid: mock_server.mid,
-};
-
-var env_testing = {
-  user: process.env.CG_USER,
-  password: process.env.CG_PASS,
+var payment_env = {
+  user: 'USER',
+  password: 'PASS',
   server: 'https://cguat2.creditguard.co.il',
-  terminal: process.env.CG_TERMINAL,
-  mid: process.env.CG_MID,
+  terminal: 'TERM',
+  mid: 'MID',
 };
+
+var charge = {
+  cardNo: '1234567890123456',
+  cardExpiration: '0916',
+  id: '012345678',
+  cvv: '123',
+  total: 100,
+  transactionType: 'Debit',
+  creditType: 'RegularCredit',
+  currency: 'ILS',
+  transactionCode: 'Phone',
+  validation: 'AutoComm',
+  uniqueid: '1234',
+  email: 'test@yourown.com',
+  invoice: {
+    invoiceCreationMethod: 'wait',
+    invoiceSubject: 'חשבונית קאפס',
+    invoiceItemCode: '1234',
+    invoiceItemDescription: 'test',
+    invoiceItemPrice: 100,
+    invoiceItemQuantity: 1,
+    isItemPriceWithTax: 1,
+    companyInfo: 'דפנה דה-גרוט',
+    mailTo: 'test@yourown.com',
+    ccDate: '2015-12-15',
+  }
+};
+
 
 suite('charge', function() {
-  test('call method without params should fail', function(done) {
-    var cg = creditguard(env_testing, { verbose: false });
-    cg.call({}, function(err, res) {
+  test('successful charge', function(done) {
+    var cg = creditguard(payment_env);
+    cg.call(charge, function(err, res) {
+      assert.isNull(err);
+      assert.isNotNull(res);
       done();
     });
   });
+
 });

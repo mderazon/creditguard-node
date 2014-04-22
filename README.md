@@ -1,5 +1,4 @@
 #Creditguard node.js
-[![Build Status](https://drone.io/github.com/mderazon/creditguard-node/status.png)](https://drone.io/github.com/mderazon/creditguard-node/latest)
 
 A simple wrapper to [creditguard](http://creditguard.co.il) api
 
@@ -120,10 +119,10 @@ charge.invoice = {
 `creditguard-node` takes cg `xml` response and converts it to a `javascript` object so there's no need for you to parse any xml. It also verifies that the transaction result code is `000` (OK) and if not, throws an informative error that you can catch.
 
 ## Changelog
+- v0.0.3 - removed bad unicode characters that can jam the transaction
 - v0.0.2 - added xml header for ISO-8859-8 encoding
 
 ## TODO
-- Add mock test server that emulates cg server to remove dependency in cg real servers.
 - Add more tests.
 - Add more apis for common operations like charge, capture and redirect.
 

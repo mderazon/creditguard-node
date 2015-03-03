@@ -6,7 +6,7 @@ var payment_env = {
   password: 'PASS',
   server: 'https://cguat2.creditguard.co.il',
   terminal: 'TERM',
-  mid: 'MID',
+  mid: 'MID'
 };
 
 var charge = {
@@ -32,7 +32,7 @@ var charge = {
     isItemPriceWithTax: 1,
     companyInfo: 'דפנה דה-גרוט',
     mailTo: 'test@yourown.com',
-    ccDate: '2015-12-15',
+    ccDate: '2015-12-15'
   }
 };
 

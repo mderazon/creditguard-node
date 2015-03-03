@@ -17,7 +17,7 @@ var env = {
   password: 'password',
   server: 'https://cguat2.creditguard.co.il',
   terminal: '1234567',
-  mid: '531',
+  mid: '531', // required only for redirect
   // optional callback addresses when using cg redirect api
   // when left empty, cg will use the predefined terminal value
   success_url: 'localhost/payment/proceed?',
@@ -119,6 +119,7 @@ charge.invoice = {
 `creditguard-node` takes cg `xml` response and converts it to a `javascript` object so there's no need for you to parse any xml. It also verifies that the transaction result code is `000` (OK) and if not, throws an informative error that you can catch.
 
 ## Changelog
+- v0.0.4 - turned `mid` and `*_url` fields to optional to allow non-redirect api calls
 - v0.0.3 - removed bad unicode characters that can jam the transaction
 - v0.0.2 - added xml header for ISO-8859-8 encoding
 

@@ -2,17 +2,29 @@ var assert = require('chai').assert;
 var creditguard = require('../lib/creditguard');
 
 var payment_env = {
-  user: 'USER',
-  password: 'PASS',
-  server: 'https://cguat2.creditguard.co.il',
-  terminal: 'TERM',
-  mid: 'MID'
+  language: 'heb',
+  user: "israeli",
+  password: "PASSWORD",
+  server: "https://cguat2.creditguard.co.il",
+  terminal: "TERM"
+};
+
+var payment_env_with_mid = {
+  language: 'heb',
+  user: "israeli",
+  password: "PASSWORD",
+  server: "https://cguat2.creditguard.co.il",
+  terminal: "TERM",
+  mid: "MID",
+  success_url: "http://localhost:3000/success",
+  error_url: "http://localhost:3000/error",
+  cancel_url: "http://localhost:3000/cancel"
 };
 
 var charge = {
-  cardNo: '1234567890123456',
+  cardNo: '4012888888881881',
   cardExpiration: '0916',
-  id: '012345678',
+  id: '310608195',
   cvv: '123',
   total: 100,
   transactionType: 'Debit',
@@ -32,7 +44,7 @@ var charge = {
     isItemPriceWithTax: 1,
     companyInfo: 'דפנה דה-גרוט',
     mailTo: 'test@yourown.com',
-    ccDate: '2015-12-15'
+    ccDate: new Date().toISOString().slice(0, 10)
   }
 };
 
@@ -43,6 +55,17 @@ suite('charge', function() {
     cg.call(charge, function(err, res) {
       assert.isNull(err);
       assert.isNotNull(res);
+      console.log(JSON.stringify(res, false, '\t'));
+      done();
+    });
+  });
+
+  test('successful charge with mid and urls', function(done) {
+    var cg = creditguard(payment_env_with_mid);
+    cg.call(charge, function(err, res) {
+      assert.isNull(err);
+      assert.isNotNull(res);
+      console.log(JSON.stringify(res, false, '\t'));
       done();
     });
   });

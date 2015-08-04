@@ -29,7 +29,7 @@
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -u tdd -t 5000 test/test-*.js"
-  }
+  },
   "maintainers": [
     {
       "name": "mderazon",

@@ -1,6 +1,6 @@
 {
   "name": "creditguard",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Simple wrapper for Creditguard API",
   "homepage": "https://github.com/mderazon/creditguard-node",
   "author": {
@@ -30,4 +30,14 @@
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -u tdd -t 5000 test/test-*.js"
   }
+  "maintainers": [
+    {
+      "name": "mderazon",
+      "email": "mderazon@hotmail.com"
+    },
+    {
+      "name": "dearwish",
+      "email": "davewish@gmail.com"
+    }
+  ],
 }

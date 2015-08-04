@@ -22,7 +22,9 @@ var env = {
   // when left empty, cg will use the predefined terminal value
   success_url: 'localhost/payment/proceed?',
   error_url: 'localhost/payment/rejected?',
-  cancel_url: 'localhost/payment/rejected?'
+  cancel_url: 'localhost/payment/rejected?',
+  // optional interface language of MPI hosted payment page
+  language: 'heb' // default vaue is 'eng'
 };
 
 var options = {
@@ -119,6 +121,7 @@ charge.invoice = {
 `creditguard-node` takes cg `xml` response and converts it to a `javascript` object so there's no need for you to parse any xml. It also verifies that the transaction result code is `000` (OK) and if not, throws an informative error that you can catch.
 
 ## Changelog
+- v0.0.5 - added an option to show MPI hosted payment page in user-defined language
 - v0.0.4 - turned `mid` and `*_url` fields to optional to allow non-redirect api calls
 - v0.0.3 - removed bad unicode characters that can jam the transaction
 - v0.0.2 - added xml header for ISO-8859-8 encoding

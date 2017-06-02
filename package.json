@@ -4,10 +4,10 @@
   "description": "Simple wrapper for Creditguard API",
   "homepage": "https://github.com/mderazon/creditguard-node",
   "author": {
-      "name": "Michael Derazon",
-      "email": "mderazon@hotmail.com",
-      "url": "http://drzon.net"
-    },
+    "name": "Michael Derazon",
+    "email": "mderazon@hotmail.com",
+    "url": "http://drzon.net"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/mderazon/creditguard-node.git"
@@ -17,15 +17,15 @@
     "node": ">= 0.6.8"
   },
   "main": "./lib/creditguard",
-
   "dependencies": {
-    "request": "2.34.0",
     "jsontoxml": "0.0.11",
+    "pretty-data": "^0.40.0",
+    "request": "2.34.0",
     "xml2js": "0.4.2"
   },
   "devDependencies": {
-    "mocha": "*",
-    "chai": "*"
+    "chai": "*",
+    "mocha": "*"
   },
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha -u tdd -t 5000 test/test-*.js"

@@ -2,8 +2,8 @@
   "plugins": ["node"],
   "globals": {
     "chai": true,
-    "suite": true,
-    "test": true
+    "describe": true,
+    "it": true
   },
   "parser": "babel-eslint",
   "extends": ["eslint:recommended", "plugin:node/recommended", "prettier"]

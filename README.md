@@ -33,7 +33,6 @@ var env = {
 };
 
 var options = {
-  verbose: true, // prints more logs, default to false
   cleanup: true // remove empty fields from result, default to false
 };
 
@@ -73,7 +72,7 @@ Then the proper use would be :
 ```js
 // basically create an object with everything you want to put under 'doDeal' element
 // (no need to inset terminal number or any other value from 'env')
-var charge = {
+let charge = {
   cardNo: '458045XXXXXX4580',
   cardExpiration: '1212'
   creditType: 'RegularCredit',
@@ -85,14 +84,12 @@ var charge = {
   user: '567890'
 };
 
-cg.call(charge, function(err, res) {
-  if (err) {
-    console.error(err);
-    console.error(res);
-  } else {
-    console.log(res);
-  }
-});
+try {
+  let res = await cg.call(charge)
+  // ...
+} catch (err) {
+  // ...
+}
 ```
 
 ### Customer data
@@ -109,7 +106,7 @@ charge.customerData = {
 
 ### Invoices
 
-If your terminal supports invoices you can easily attach invoice to the call again, by attaching it to the `charge` object:
+If your terminal supports invoices you can easily attach invoice to the call, again, by attaching it to the `charge` object:
 
 ```js
 // check out cg invoice documentation for complete list of properties
@@ -127,13 +124,6 @@ charge.invoice = {
 ### Response
 
 `creditguard-node` takes cg `xml` response and converts it to a `javascript` object so there's no need for you to parse any xml. It also verifies that the transaction result code is `000` (OK) and if not, throws an informative error that you can catch.
-
-## Changelog
-
-* v0.0.5 - added an option to show MPI hosted payment page in user-defined language
-* v0.0.4 - turned `mid` and `*_url` fields to optional to allow non-redirect api calls
-* v0.0.3 - removed bad unicode characters that can jam the transaction
-* v0.0.2 - added xml header for ISO-8859-8 encoding
 
 ## TODO
 

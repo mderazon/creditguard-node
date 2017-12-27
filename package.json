@@ -8,7 +8,9 @@
     "email": "mderazon@hotmail.com",
     "url": "https://drzon.net"
   },
-  "files": ["lib/**"],
+  "files": [
+    "lib/**"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/mderazon/creditguard-node.git"
@@ -31,14 +33,13 @@
     "chai": "^4.1.2",
     "eslint": "^4.14.0",
     "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.8.0",
     "eslint-plugin-node": "^5.2.1",
     "eslint-plugin-promise": "^3.6.0",
     "mocha": "^4.0.1",
     "prettier": "^1.9.2"
   },
   "scripts": {
-    "test": "prettier -l --single-quote **/*.js && eslint . &&./node_modules/mocha/bin/mocha -u tdd -t 5000 test/test-*.js"
+    "test": "prettier -l --single-quote **/*.js && eslint . && mocha -t 5000 test/test-*.js"
   },
   "maintainers": [
     {

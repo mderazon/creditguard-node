@@ -1,4 +1,4 @@
-const assert = require('chai').assert;
+const expect = require('chai').expect;
 const creditguard = require('../lib/creditguard');
 
 const payment_env = {
@@ -36,34 +36,38 @@ const charge = {
   email: 'test@yourown.com',
   invoice: {
     invoiceCreationMethod: 'wait',
-    invoiceSubject: 'חשבונית קאפס',
+    invoiceSubject: 'your invoice',
     invoiceItemCode: '1234',
     invoiceItemDescription: 'test',
     invoiceItemPrice: 100,
     invoiceItemQuantity: 1,
     isItemPriceWithTax: 1,
-    companyInfo: 'דפנה דה-גרוט',
+    companyInfo: 'yourown info',
     mailTo: 'test@yourown.com',
     ccDate: new Date().toISOString().slice(0, 10)
   }
 };
 
-suite('charge', function() {
-  test('successful charge', function(done) {
+describe('charge', async () => {
+  it('should successfully charge', async done => {
     const cg = creditguard(payment_env);
-    cg.call(charge, function(err, res) {
-      assert.isNull(err);
-      assert.isNotNull(res);
+    try {
+      const res = await cg.call(charge);
+      expect(res).to.exist;
       done();
-    });
+    } catch (err) {
+      done(err);
+    }
   });
 
-  test('successful charge with mid and urls', function(done) {
+  it('should successfully charge with mid and urls', async done => {
     const cg = creditguard(payment_env_with_mid);
-    cg.call(charge, function(err, res) {
-      assert.isNull(err);
-      assert.isNotNull(res);
+    try {
+      const res = await cg.call(charge);
+      expect(res).to.exist;
       done();
-    });
+    } catch (err) {
+      done(err);
+    }
   });
 });

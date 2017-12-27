@@ -1,6 +1,8 @@
 # creditguard-node
 
-A simple wrapper for [creditguard](http://creditguard.co.il) api
+> A simple wrapper for [creditguard](http://creditguard.co.il) api
+
+[![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
 ## Usage
 

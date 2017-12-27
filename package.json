@@ -1,11 +1,13 @@
 {
   "name": "creditguard",
-  "version": "0.0.6",
+  "version": "1.0.0",
   "description": "Simple wrapper for Creditguard API",
   "homepage": "https://github.com/mderazon/creditguard-node",
   "author": "Michael DeRazon <mderazon@hotmail.com> (https://drzon.net)",
   "license": "MIT",
-  "files": ["lib/**"],
+  "files": [
+    "lib/**"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/mderazon/creditguard-node.git"
@@ -34,8 +36,9 @@
     "prettier": "^1.9.2"
   },
   "scripts": {
-    "test":
-      "prettier -l --single-quote **/*.js && eslint . && mocha -t 5000 test/test-*.js"
+    "test": "prettier -l --single-quote **/*.js && eslint . && mocha -t 5000 test/test-*.js"
   },
-  "contributors": ["dearwish <davewish@gmail.com>"]
+  "contributors": [
+    "dearwish <davewish@gmail.com>"
+  ]
 }

@@ -4,32 +4,41 @@
   "description": "Simple wrapper for Creditguard API",
   "homepage": "https://github.com/mderazon/creditguard-node",
   "author": {
-    "name": "Michael Derazon",
+    "name": "Michael DeRazon",
     "email": "mderazon@hotmail.com",
-    "url": "http://drzon.net"
+    "url": "https://drzon.net"
   },
+  "files": ["lib/**"],
   "repository": {
     "type": "git",
     "url": "git://github.com/mderazon/creditguard-node.git"
   },
   "bugs:": "https://github.com/mderazon/creditguard-node/issues",
   "engines": {
-    "node": ">= 0.6.8"
+    "node": ">= 7.6.0"
   },
   "main": "./lib/creditguard",
   "dependencies": {
-    "jsontoxml": "0.0.11",
+    "debug": "^3.1.0",
+    "jsontoxml": "^0.1.0",
     "pretty-data": "^0.40.0",
-    "request": "2.34.0",
+    "request": "^2.83.0",
     "request-promise": "^4.2.1",
-    "xml2js": "0.4.2"
+    "xml2js": "^0.4.19"
   },
   "devDependencies": {
-    "chai": "*",
-    "mocha": "*"
+    "babel-eslint": "^8.1.2",
+    "chai": "^4.1.2",
+    "eslint": "^4.14.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "mocha": "^4.0.1",
+    "prettier": "^1.9.2"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha -u tdd -t 5000 test/test-*.js"
+    "test": "prettier -l --single-quote **/*.js && eslint . &&./node_modules/mocha/bin/mocha -u tdd -t 5000 test/test-*.js"
   },
   "maintainers": [
     {

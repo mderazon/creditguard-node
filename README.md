@@ -1,12 +1,15 @@
-#Creditguard node.js
+# creditguard-node
 
-A simple wrapper to [creditguard](http://creditguard.co.il) api
+A simple wrapper for [creditguard](http://creditguard.co.il) api
 
 ## Usage
+
 ### Installation
+
 ```
-npm install creditguard
+$ npm install creditguard
 ```
+
 ### Setting up
 
 ```js
@@ -91,7 +94,8 @@ cg.call(charge, function(err, res) {
 ```
 
 ### Customer data
-If you are using the xml api to get a redirect page and you want to use `customerData` fields to pass some data into that page, you can do it simply by attaching it to `charge` object: 
+
+If you are using the xml api to get a redirect page and you want to use `customerData` fields to pass some data into that page, you can do it simply by attaching it to `charge` object:
 
 ```js
 charge.customerData = {
@@ -102,7 +106,8 @@ charge.customerData = {
 ```
 
 ### Invoices
-If your terminal supports invoices you can easily attach invoice to the call again, by attaching it to the `charge` object: 
+
+If your terminal supports invoices you can easily attach invoice to the call again, by attaching it to the `charge` object:
 
 ```js
 // check out cg invoice documentation for complete list of properties
@@ -118,25 +123,17 @@ charge.invoice = {
 ```
 
 ### Response
+
 `creditguard-node` takes cg `xml` response and converts it to a `javascript` object so there's no need for you to parse any xml. It also verifies that the transaction result code is `000` (OK) and if not, throws an informative error that you can catch.
 
 ## Changelog
-- v0.0.5 - added an option to show MPI hosted payment page in user-defined language
-- v0.0.4 - turned `mid` and `*_url` fields to optional to allow non-redirect api calls
-- v0.0.3 - removed bad unicode characters that can jam the transaction
-- v0.0.2 - added xml header for ISO-8859-8 encoding
+
+* v0.0.5 - added an option to show MPI hosted payment page in user-defined language
+* v0.0.4 - turned `mid` and `*_url` fields to optional to allow non-redirect api calls
+* v0.0.3 - removed bad unicode characters that can jam the transaction
+* v0.0.2 - added xml header for ISO-8859-8 encoding
 
 ## TODO
-- Add more tests.
-- Add more apis for common operations like charge, capture and redirect.
 
-
-## The MIT License
-
-Copyright (C) 2013 Michael Derazon
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+* Add more tests.
+* Add more apis for common operations like charge, capture and redirect.

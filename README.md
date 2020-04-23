@@ -29,7 +29,8 @@ var env = {
   error_url: 'localhost/payment/rejected?',
   cancel_url: 'localhost/payment/rejected?',
   // optional interface language of MPI hosted payment page
-  language: 'heb' // default vaue is 'eng'
+  language: 'heb', // default value is 'eng'
+  version: '2000' // terminal version. At the moment CG works with EMV ('2000') and Credit96 ('1001') terminals. Default value is '1001'  
 };
 
 var options = {
@@ -74,18 +75,18 @@ Then the proper use would be :
 // (no need to inset terminal number or any other value from 'env')
 let charge = {
   cardNo: '458045XXXXXX4580',
-  cardExpiration: '1212'
+  cardExpiration: '1212',
   creditType: 'RegularCredit',
   currency: 'USD',
   transactionCode: 'Phone',
   transactionType: 'Debit',
   total: 10010,
-  validation: 'AutoComm'
+  validation: 'AutoComm',
   user: '567890'
 };
 
 try {
-  let res = await cg.call(charge)
+  let res = await cg.call(charge);
   // ...
 } catch (err) {
   // ...
@@ -116,7 +117,7 @@ charge.invoice = {
   invoiceItemQuantity: 1,
   invoiceItemPrice: 10010,
   companyInfo: 'Vandelay Industries',
-  mailTo 'george@vandelay.com',
+  mailTo: 'george@vandelay.com',
   ...
 }
 ```
